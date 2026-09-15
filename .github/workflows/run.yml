@@ -19,5 +19,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Restore Telegram session
+        env:
+          SESSION_B64: ${{ secrets.TELEGRAM_SESSION_B64 }}
+        run: |
+          echo "$SESSION_B64" | base64 -d > editpeak_session.session
+
       - name: Run Finder
         run: python main.py
