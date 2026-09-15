@@ -1,0 +1,8 @@
+editpeak_session.session
+__pycache__/
+*.backup
+*.before_ui
+.env
+data/*.db
+.env
+data/*.db
