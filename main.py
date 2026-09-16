@@ -147,4 +147,10 @@ Starting...
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except Exception:
+        import traceback
+        print("❌ STARTUP ERROR:")
+        traceback.print_exc()
+        raise
