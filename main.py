@@ -1,3 +1,4 @@
+print("DEBUG: main.py started", flush=True)
 import os
 import asyncio
 import base64
