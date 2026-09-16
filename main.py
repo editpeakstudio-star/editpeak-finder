@@ -16,8 +16,6 @@ load_dotenv()
 API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 
-API_ID = int(os.getenv("API_ID"))
-API_HASH = os.getenv("API_HASH")
 
 SESSION_FILE = "editpeak_session.session"
 SESSION_B64 = os.getenv("TELEGRAM_SESSION_B64")
