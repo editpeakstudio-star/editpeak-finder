@@ -1,5 +1,6 @@
 import os
 import asyncio
+import base64
 
 from dotenv import load_dotenv
 from telethon import TelegramClient, events
@@ -15,6 +16,18 @@ load_dotenv()
 API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 
+API_ID = int(os.getenv("API_ID"))
+API_HASH = os.getenv("API_HASH")
+
+SESSION_FILE = "editpeak_session.session"
+SESSION_B64 = os.getenv("TELEGRAM_SESSION_B64")
+
+if SESSION_B64 and not os.path.exists(SESSION_FILE):
+    with open(SESSION_FILE, "wb") as f:
+        f.write(base64.b64decode(SESSION_B64.strip()))
+
+if not os.path.exists(SESSION_FILE):
+    raise RuntimeError("Telegram session file is missing")
 
 # Yahan baad me accessible Telegram sources add karenge.
 SOURCES = [
