@@ -25,7 +25,7 @@ jobs:
         run: |
           echo "$SESSION_B64" | base64 -d > editpeak_session.session
 
-- name: Run Finder
-  env:
-    BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-  run: python main.py
+      - name: Run Finder
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: python main.py
